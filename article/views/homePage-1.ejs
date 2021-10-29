@@ -1,0 +1,15 @@
+<%- include('components/header') %>
+
+    <h1>The New York Times</h1>
+
+    <div style="text-align: center;" class="container">
+        <% if(articleArr){ %>
+            <% articleArr.forEach(article => { %>
+                <%- include('components/card', {article}) %>
+            <% }) %>
+        <% } %>
+        
+    </div>
+
+<%- include('components/footer') %>
+

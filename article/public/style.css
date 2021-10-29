@@ -1,0 +1,17 @@
+.flexDisplay{
+    margin: 10px;
+    display: flex;
+    justify-content: space-around;
+    flex-flow: row wrap;
+}
+.warning{
+    margin: 5px;
+    display: inline-block;
+    color: tomato;
+    /* background-color: tomato; */
+    padding: 5px 15px;
+    
+}
+.shadows{
+    box-shadow: 2px 2px 5px 2px rgba(41, 41, 41, 0.6);
+}

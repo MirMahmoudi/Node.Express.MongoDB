@@ -1,0 +1,10 @@
+<div class="flexDisplay card shadows" style="width: 18rem;">
+    <div class="card-body">
+        <a href="/seeMore/<%=article._id %>">
+            <h5 class="card-title"> <%= article ? article.title : '' %> </h5>
+        </a>
+        <p class="card-text"> <%= article ? article.article : '' %> </p>
+            <a class="btn btn-warning" href="/update/<%=article._id %>">Edit Article</a>
+            <a class="btn btn-danger" href="/delete/<%=article._id %>">Delete Article</a>
+        </div>
+</div>

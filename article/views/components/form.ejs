@@ -1,0 +1,21 @@
+<% if(article){ %>
+    <form method="POST" action="/update/<%=article._id %>" class="container">
+<% } else { %>
+    <form method="POST" action="/newArticle" class="container">
+<% } %>
+    <div class="mb-3">
+        <label for="title" class="form-label">Title</label>
+        <input name="title" type="text" class="form-control" id="title" value="<%= article ? article.title : '' %>">
+        <% if(errors && errors.title){ %>
+            <div class="container"><span class="warning"><%= errors.title %></span></div>
+        <% } %>
+    </div>
+    <div class="mb-3">
+        <label for="article" class="form-label">Article</label>
+        <textarea name="article" type="text" class="form-control" id="article" rows="3"><%= article ? article.article : '' %></textarea>
+        <% if(errors && errors.article){ %>
+            <div class="container"><span class="warning"><%= errors.article %></span></div>
+        <% } %>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>

@@ -1,0 +1,14 @@
+<%- include('components/header') %>
+    <div class="flexDisplay">
+        <% if(pageTitle === 'New Article'){ %>
+            <h1> Make a New Article</h1>
+        <% } else if (pageTitle === 'Update Article'){ %>
+            <h1> Edit this Article</h1>
+        <% } %>
+        <a href="/">
+            <button type="button" class="btn btn-primary">Back to Home</button>
+        </a>
+    </div>
+    <%- include('components/form') %>
+
+<%- include('components/footer') %>

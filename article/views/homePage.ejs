@@ -1,0 +1,19 @@
+<%- include('components/header') %>
+    <div class="flexDisplay">
+        <h1 >The New York Times</h1>
+        <a href="/newArticle">
+            <button type="button" class="btn btn-primary">Make a New Article</button>
+        </a>
+    </div>
+
+    <div class="flexDisplay" style="text-align: center;" class="container">
+        <% if(articles.length){ %>
+            <% articles.forEach(article => { %>
+                <%- include('components/card', {article}) %>
+            <% }) %>
+        <% } else { %>
+            <h5 class="warning">There is no Article!</h5>
+        <% } %>
+    </div>
+
+<%- include('components/footer') %>
