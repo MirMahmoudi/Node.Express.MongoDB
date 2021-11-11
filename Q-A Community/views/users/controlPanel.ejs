@@ -1,0 +1,31 @@
+<%- include('../components/header') %>
+  <div class="header">
+    <h1>Q & A Community</h1>
+  </div>
+  <div class="log">
+    <h2 class="header">Control Panel</h2>
+    <form method="POST" action="/controlPanel/<%= user._id %>" class="log_form">
+      <div class="mb-3">
+        <label for="userName" class="form-label">User Name</label>
+        <input value="<%= locals.user.userName %>" name="userName" type="text" class="form-control" id="userName" >
+        <small class="form-text warning userName"><%= warning?.userName %></small>
+      </div>
+      <div class="mb-3">
+        <label for="email2" class="form-label">Email address</label>
+        <input value="<%= locals.user.email %>" name="email" type="email" class="form-control" id="email2" >
+        <small class="form-text warning email"><%= warning?.email %></small>
+      </div>
+      <div class="mb-3">
+        <label for="password" class="form-label">Password</label>
+        <input name="password" type="password" class="form-control" id="password">
+        <small class="form-text warning password"><%= warning?.password %></small>
+      </div>
+      <div class="mb-3">
+        <label for="password1" class="form-label">re-Password</label>
+        <input name="rePassword" type="password" class="form-control" id="password1">
+        <small class="form-text warning password"><%= warning?.rePassword %></small>
+      </div>
+      <button type="submit" class="btn btn-primary">Save</button>
+    </form>
+  </div>
+<%- include('../components/footer') %>

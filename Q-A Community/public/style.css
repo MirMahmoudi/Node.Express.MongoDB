@@ -1,0 +1,92 @@
+body{
+  background-color: #f7fdff;
+}
+
+/* for header & Nav bar */
+#logo{
+  width: 3.5rem;
+  border-radius: 50%;
+}
+.header{
+  margin: 40px;
+  text-align: center;
+  color: #545463;
+  font-style: italic;
+}
+
+/* for homepage */
+.noData{
+  text-align: center;
+  font-size: 20px;
+  color: #b70505;
+}
+
+/* for cards */
+.card-header{
+  background-color: #773cc4f7;
+  color: white;
+}
+.answer-header{
+  background-color: #3c8b00f7;
+  text-align: center;
+}
+.card{
+  margin: 2rem;
+  margin-left: 22%;
+  width: 55%;
+}
+.card-body{
+  padding: 30px ;
+}
+.card-text{
+  text-align: justify;
+  padding: 20px;
+}
+/* class .date is used in other places */
+.date{ 
+  font-size: 13px;
+}
+span{
+  font-style: italic;
+  font-weight: bolder;
+}
+
+/* for the login & signup pages */
+.log{
+  width: 45%;
+  border: rgb(210, 211, 212) 1px solid;
+  margin-top: 1rem;
+  margin-left: 27%;
+  background-color: #ecebebab;
+  border-radius: 20px;
+  box-shadow: 0 4px 7px 1px rgb(0 0 0 / 14%);
+}
+.log_form{
+  margin: 10%;
+}
+.warning{
+  color: crimson;
+  font-size: 0.8rem;
+}
+.login_title{
+  position: relative;
+}
+.login_title h2{
+  display: inline-block;
+}
+.login_title a{
+  font-weight: bold;
+  font-size: 1rem;
+  margin-left: 2px;
+  position: absolute;
+  top: 0;
+  right: 1rem;
+}
+
+
+
+/* footer */
+footer{
+  margin-top: 5rem;
+  text-align: center;
+}

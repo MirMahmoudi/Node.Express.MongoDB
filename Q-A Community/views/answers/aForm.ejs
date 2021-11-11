@@ -1,0 +1,33 @@
+<div>
+  <form
+    <% if(result && !answer) { %>
+      method="POST" 
+      action="/answerQuestion/<%= result._id %>"
+    <% }else if (!result && answer) { %>
+      method="POST" 
+      action="/updateAnswer/<%= answer._id%>"
+    <% }else{ %>
+      method="GET"
+      action="/login"
+    <% } %> 
+    class="log_form">
+  <div class="mb-3">
+      <label for="answer" class="form-label">
+        <% if(result && !answer) { %> Answer this question : <% } %>
+        <% if(!result && answer) { %> Edit this Answer : <% } %>
+      </label>
+      <textarea name="answer" class="form-control" id="answer" rows="3"><% if(!result && answer) { %><%= answer.answer %><% } %></textarea>
+      <small class="form-text warning answer"><%= error?.answer %>  </small>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+    <% if(result && !answer) { %>
+      <a href="/showQuestion/<%= result._id %>">
+    <% }else if (!result && answer) { %>
+      <a href="/showQuestion/<%= answer.question_id %>">
+    <% }else{ %>
+      <a href="/login">
+      <% } %> 
+      <button type="button" class="btn btn-warning">Cancel</button>
+    </a>
+  </form>
+</div>

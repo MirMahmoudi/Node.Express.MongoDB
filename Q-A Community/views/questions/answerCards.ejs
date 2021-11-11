@@ -1,0 +1,20 @@
+<% if(answers.length) { %>
+  <% answers.forEach(answer => { %>
+    <div class="card">
+      <div class="card-header answer-header">
+        <span><%= answer.user_id.userName %></span>  add this answer
+      </div>
+      <div class="card-body">
+        <p class="card-text"><%= answer.answer %></p>
+        <p class="date">Created at :<%= moment(answer.createdAt).format('MMMM Do YYYY, h:mm a') %></p>
+        <p class="date">Updated at :<%= moment(answer.updatedAt).format('MMMM Do YYYY, h:mm a') %></p>
+        <% if(locals.user && JSON.stringify(answer.user_id._id) === JSON.stringify(user._id)){ %> 
+          <a href="/deleteAnswer/<%= answer._id %>"><button type="button" class="btn btn-danger">Delete</button></a>
+          <a href="/updateAnswer/<%= answer._id %>"><button type="button" class="btn btn-warning">Update</button></a>
+        <% } %> 
+      </div>
+    </div>
+  <% }) %> 
+<% }else { %>
+  <p class="card card-header answer-header card-body">There is No answer</p>
+<% } %> 

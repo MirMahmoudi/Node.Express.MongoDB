@@ -1,0 +1,15 @@
+<div class="card">
+  <div class="card-header">
+    This question is from : <span><%= result.user_id.userName %> </span>
+  </div>
+  <div class="card-body">
+    <h5 class="card-title"><%= result.question %></h5>
+    <p class="card-text"><%= result.description %></p>
+    <p class="date">Created at: <%= moment(result.createdAt).format('MMMM Do YYYY, h:mm a') %></p>
+    <p class="date">Updated at: <%= moment(result.updatedAt).format('MMMM Do YYYY, h:mm a') %></p>
+    <% if(locals.user && JSON.stringify(result.user_id._id) === JSON.stringify(user._id)){ %> 
+    <a href="/updateQuestion/<%= result._id %>"><button type="button" class="btn btn-success">Update</button></a>
+    <a href="/deleteQuestion/<%= result._id %>"><button type="button" class="btn btn-danger">Delete</button></a>
+    <% } %> 
+  </div>
+</div>

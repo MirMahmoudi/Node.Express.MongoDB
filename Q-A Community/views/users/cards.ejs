@@ -1,0 +1,24 @@
+<% if(result.length > 0 ) { %>
+  <h4 class="header">There are <%= result.length %> questions</h4>
+
+  <% result.forEach(value => { %> 
+    <div class="card">
+      <div class="card-header">
+        This question is from : <span><%= value.user_id.userName %></span> 
+      </div>
+      <div class="card-body">
+        <h5 class="card-title"><%= value.question %></h5>
+        <p class="card-text"><%= value.description %></p>
+        <% if (value.createdAt === value.updatedAt){ %> 
+          <p class="date">This Question was asked : <%= moment(value.createdAt).format('MMMM Do YYYY, h:mm a') %></p>
+        <% }else{ %> 
+          <p class="date">This Question was updated : <%= moment(value.updatedAt).format('MMMM Do YYYY, h:mm a') %></p>
+        <% } %> 
+        <a href="/showQuestion/<%= value._id %>" class="card-link"> <button class="btn btn-primary">See More!</button> </a>
+      </div>
+    </div>
+  <% }) %>
+
+<% } else { %>
+  <div class="noData">There is no Question.</div>
+<% } %> 
